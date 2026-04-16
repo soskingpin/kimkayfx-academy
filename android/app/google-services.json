@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "676000840736",
+    "project_id": "sos-chat-9ab75",
+    "storage_bucket": "sos-chat-9ab75.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676000840736:android:cdbd48d5f191277d309045",
+        "android_client_info": {
+          "package_name": "com.example.kimkayfx_academy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzn42iR3b-W0YDJ6hNc9gPbbOQ9KnzQVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

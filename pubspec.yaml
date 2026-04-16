@@ -1,0 +1,34 @@
+name: kimkayfx_academy
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_animate: ^4.5.2
+  provider: ^6.1.5+1
+  intl: ^0.20.2
+  shared_preferences: ^2.5.5
+  firebase_core: ^4.7.0
+  cloud_firestore: ^6.3.0
+  device_info_plus: ^13.0.0
+  flutter_dotenv: ^6.0.0
+  url_launcher: ^6.3.1  # ✅ For WhatsApp purchase flow
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/kimkay_logo.png
+    - assets/images/payments/ecocash_logo.png
+    - assets/images/payments/omari_logo.png
+    - assets/images/payments/innbucks_logo.png
