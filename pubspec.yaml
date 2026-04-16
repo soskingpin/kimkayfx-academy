@@ -9,21 +9,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
-  flutter_animate: ^4.5.2
-  provider: ^6.1.5+1
-  intl: ^0.20.2
-  shared_preferences: ^2.5.5
-  firebase_core: ^4.7.0
-  cloud_firestore: ^6.3.0
-  device_info_plus: ^13.0.0
-  flutter_dotenv: ^6.0.0
-  url_launcher: ^6.3.1  # ✅ For WhatsApp purchase flow
+  cupertino_icons: ^1.0.6
+  flutter_animate: ^4.5.0
+  provider: ^6.1.1
+  intl: ^0.19.0
+  shared_preferences: ^2.2.3
+  firebase_core: ^3.0.0
+  cloud_firestore: ^5.0.0
+  device_info_plus: ^10.0.0
+  flutter_dotenv: ^5.1.0
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^3.0.1
 
 flutter:
   uses-material-design: true
