@@ -1,21 +1,28 @@
-
 name: Build KimKayFX APK
 on:
   push:
     branches: [ main ]
   workflow_dispatch:
+
 jobs:
   build-apk:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # ✅ Fixes Node.js warning
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5  # ✅ Updated version
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.0'
+          channel: 'stable'
           cache: true
       - run: flutter pub get
+      - run: |
+          cd android
+          chmod +x gradlew  # ✅ Ensures Gradle wrapper is executable
       - run: flutter build apk --release --split-per-abi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5  # ✅ Updated version
         with:
           name: kimkayfx-apks
           path: build/app/outputs/flutter-apk/*.apk
+          retention-days: 7
