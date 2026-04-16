@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      # ✅ FIX NDK VERSION MISMATCH
+      NDROID_NDK_VERSION: "27.0.12077973"
     steps:
       - uses: actions/checkout@v5
       
@@ -20,8 +22,8 @@ jobs:
           
       - run: flutter pub get
       
-      # ✅ REMOVED chmod step - flutter build handles Gradle automatically
-      - run: flutter build apk --release --split-per-abi
+      # ✅ FIX KEYSTORE: Build debug APK for testing (no signing needed)
+      - run: flutter build apk --debug --split-per-abi
       
       - uses: actions/upload-artifact@v5
         with:
