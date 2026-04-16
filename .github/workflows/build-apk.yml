@@ -14,15 +14,15 @@ jobs:
       
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.0'  # ✅ Updated to latest stable (includes Dart 3.6+)
+          flutter-version: '3.27.0'
           channel: 'stable'
           cache: true
           
       - run: flutter pub get
-      - run: |
-          cd android
-          chmod +x gradlew
+      
+      # ✅ REMOVED chmod step - flutter build handles Gradle automatically
       - run: flutter build apk --release --split-per-abi
+      
       - uses: actions/upload-artifact@v5
         with:
           name: kimkayfx-apks
