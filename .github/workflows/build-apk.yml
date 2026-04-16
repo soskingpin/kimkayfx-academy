@@ -8,20 +8,22 @@ jobs:
   build-apk:
     runs-on: ubuntu-latest
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # ✅ Fixes Node.js warning
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - uses: actions/checkout@v5  # ✅ Updated version
+      - uses: actions/checkout@v5
+      
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.0'
+          flutter-version: '3.27.0'  # ✅ Updated to latest stable (includes Dart 3.6+)
           channel: 'stable'
           cache: true
+          
       - run: flutter pub get
       - run: |
           cd android
-          chmod +x gradlew  # ✅ Ensures Gradle wrapper is executable
+          chmod +x gradlew
       - run: flutter build apk --release --split-per-abi
-      - uses: actions/upload-artifact@v5  # ✅ Updated version
+      - uses: actions/upload-artifact@v5
         with:
           name: kimkayfx-apks
           path: build/app/outputs/flutter-apk/*.apk
