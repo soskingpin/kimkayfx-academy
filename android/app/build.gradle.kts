@@ -7,7 +7,9 @@ plugins {
 android {
     namespace = "com.kimkayfx.academy"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    
+    // ✅ HARDCODED NDK VERSION - FIXES PLUGIN COMPATIBILITY
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
