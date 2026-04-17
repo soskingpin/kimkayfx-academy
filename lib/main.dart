@@ -1,45 +1,57 @@
 import 'package:flutter/material.dart';
-//import 'package:firebase_core/firebase_core.dart';
-//import 'firebase_options.dart';
-import 'screens/splash_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const KimKayFXSignalsApp());
+void main() {
+  runApp(const KimKayFXApp());
 }
 
-class KimKayFXSignalsApp extends StatelessWidget {
-  const KimKayFXSignalsApp({super.key});
+class KimKayFXApp extends StatelessWidget {
+  const KimKayFXApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'KimKayFX Signals',
+      title: 'KimKayFX Academy',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primarySwatch: Colors.blue,
         useMaterial3: true,
-        brightness: Brightness.light,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF00C853),
-          brightness: Brightness.light,
-        ),
-        scaffoldBackgroundColor: const Color(0xFFFFFFFF),
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xFF00C853),
-          foregroundColor: Colors.white,
-          elevation: 0,
-          centerTitle: true,
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color(0xFF00C853),
-            foregroundColor: Colors.white,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-          ),
+      ),
+      home: const MinimalHomeScreen(),
+    );
+  }
+}
+
+class MinimalHomeScreen extends StatelessWidget {
+  const MinimalHomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('KimKayFX Academy'),
+        backgroundColor: Colors.blue,
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              '✅ App is working!',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Open WhatsApp with pre-filled message
+                const message = 'Hi KimKayFX, I want to purchase: VVIP Signals Lifetime';
+                final url = 'https://wa.me/263771234567?text=${Uri.encodeComponent(message)}';
+                // Note: url_launcher not included yet - this is just a placeholder
+              },
+              child: const Text('Test Purchase Flow'),
+            ),
+          ],
         ),
       ),
-      home: const SplashScreen(),
     );
   }
 }
